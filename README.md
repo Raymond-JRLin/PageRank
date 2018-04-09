@@ -81,7 +81,7 @@ PRN = Transition Matrix * PR(N-1)
 
 It's a iteration process. In each iteration, we transit weight from each page to other pages, so more important pages will receive more weight, but less important pages will have less weigth. Finally, the difference between these two kinds pages will show.
 
-When shall we stop iterations? According to a [research](https://projects.ncsu.edu/crsc/reports/ftp/pdf/crsc-tr04-02.pdf), the PageRank matrix will finally converge within 30 - 40 times iteration.<sup>[2]</sup>
+When shall we stop iterations? According to a [research](https://projects.ncsu.edu/crsc/reports/ftp/pdf/crsc-tr04-02.pdf), the PageRank matrix will finally converge within 30 - 40 times iteration.<sup>[3]</sup>
 
 
 ## Data

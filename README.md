@@ -94,9 +94,9 @@ Each test data contains 2 files: pr.txt, which is PRO, and transition.txt, which
 
 ## Prerequisite
 
-You need to have [Docker](https://store.docker.com/search?type=edition&offering=community) install in your laptop.
+You need to have [Docker](https://store.docker.com/search?type=edition&offering=community) installed in your laptop.
 
-For Mac: [downlaod](https://docs.docker.com/docker-for-mac/)
+For Mac: download [here](https://docs.docker.com/docker-for-mac/)
 
 For Linux:
 

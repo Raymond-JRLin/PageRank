@@ -10,9 +10,11 @@ Other than tranditional websites ranking method, PageRank involes all website to
 2. Websites with higher PageRank will pass higher weight
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/PageRanks-Example.svg/758px-PageRanks-Example.svg.png)
-> Mathematical PageRanks for a simple network, expressed as percentages.<sup>[2]</sup>
+> Mathematical PageRanks for a simple network, expressed as percentages.
 
-So how to represent these 2 theories in our algorithm? We need 2 things: representation of directivity among pages, and representation of importance (weight) of each websites.
+Above figure coming from [WikiPedia](https://en.wikipedia.org/wiki/PageRank)<sup>[2]</sup> shows a great example of above two theories. Each ball stands for one page, and the size of it reflects the value of PageRank. Page-B and Page-E have relatively higher PageRank than A, D and F, since they receive many directivity from other websites. Page-C has a higher PageRank than Page-B and E, even though there are fewer links to C, because the one link to C comes from an important page - that's Page-B - and hence is of high value.
+
+But how to represent these 2 theories in our algorithm? We need 2 things: representation of directivity among pages, and representation of importance (weight) of each websites.
 
 I use following pictures to give an example:
 

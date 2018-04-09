@@ -2,7 +2,7 @@
 Implemented PageRank algorithm used by Google Search with MapReduce to rank websites in search engine results
 
 ## What's PageRank
-In one word, PageRank is a n algorithm used by Google Search to rank websites in their search engine results.
+In one word, PageRank is an algorithm used by Google Search to rank websites in their search engine results.
 
 ## How it works
 Other than tranditional websites ranking method, PageRank involes all website to do ranking. There are 2 basic theories behind<sup>[1]</sup>:
@@ -21,7 +21,7 @@ I use following pictures to give an example:
 
 ### 1. How to represent directivity among pages
 
-In above example, we have following transition:
+In above example, we have following transitions:
 
 ```
 A -> B, C, D
@@ -41,7 +41,7 @@ Assuming that the possibility of a transition from one page to itself as 0, and 
 
 ### 2. How to represent the importance (weight) of each website
 
-Actually, PageRank is the name of this algorithm, but also it's ranking results, thus we can just use PageRank of each website to show their importance.
+Actually, PageRank is the name of this algorithm, but also it's ranking results, thus we can just use PageRank itself of each website to show their importance.
 
 Assuming A, B, C and D has same initialized PageRank, we can have following **PageRank Matrix**:
 
@@ -52,15 +52,15 @@ Assuming A, B, C and D has same initialized PageRank, we can have following **Pa
 | C         |    1/4    | 
 | D         |    1/4    |
 
-*Note: PR0 of A, B, C and D can be initialized as 1 for each, which means their absolute values are not important but relative values.*
+*Note: PR0 of A, B, C and D can also be initialized as 1 for each or all other values you want, but just keep them same, which means they have same initialization values, since their absolute values are not important but relative values.*
 
 ## Calculation
 
 From above part, we know the mechanism and theories of PageRank, so how can we get the final PageRank results?
 
-If we know Page-B have *1/2* change to jump to Page-A, and B has *PRO == 1/4*, then B -> A will give A *(1/2 * 1/4 = 1/8)* weight.
+If we know Page-B have *1/2* chance to jump to Page-A, and B has *PRO == 1/4*, then *B -> A* will give A *(1/2 * 1/4 = 1/8)* weight.
 
-Keep doing this on Page-C, Page-D to Page-A, we can have PR1 of Page-A. Also, we can get PR1 of Page-B,C and D:
+Keep doing this on Page-C, Page-D to Page-A, we can have PR1 of Page-A. Also, we can get PR1 of Page-B, C and D:
 
 |  website  |    PR1    | 
 |   :---:   |   :---:   | 
@@ -69,7 +69,7 @@ Keep doing this on Page-C, Page-D to Page-A, we can have PR1 of Page-A. Also, we
 | C         |    5/24   | 
 | D         |    5/24   |
 
-So we can use matrix multiplication to get PR1, PR2, ... , PRN:
+So we can use *matrix multiplication* to get PR1, PR2, ... , and PRN:
 
 ```
 PR1 = Transition Matrix * PR0
@@ -81,7 +81,7 @@ PRN = Transition Matrix * PR(N-1)
 
 It's a iteration process. In each iteration, we transit weight from each page to other pages, so more important pages will receive more weight, but less important pages will have less weigth. Finally, the difference between these two kinds pages will show.
 
-When shall we stop iterations? According to a [research](https://projects.ncsu.edu/crsc/reports/ftp/pdf/crsc-tr04-02.pdf), the PageRank matrix will finally converge within 30 - 40 times iteration.<sup>[3]</sup>
+When shall we stop iterations? According to a [research](https://projects.ncsu.edu/crsc/reports/ftp/pdf/crsc-tr04-02.pdf), the PageRank matrix will finally converge within 30 - 40 times iterations.<sup>[3]</sup>
 
 
 ## Data

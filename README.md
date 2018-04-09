@@ -152,7 +152,8 @@ If it shows
 
 ### 6. Run PageRank
 
-*Attention: I have small and big test data, before you run, copy data files you want to test into ```src/main/java```, and use corresponding file names.*
+
+*Attention: I have small and big test data, and in small test data, I provide 2 PR0 with 1/4 and 1. Before you run, you should copy data files you want to test into ```src/main/java```, and use corresponding file names.*
 
 ```
 cd src/main/java/ # enter project source code
@@ -184,6 +185,16 @@ Then you can use big data to test.
 ```
 hdfs dfs -get <src> <localDest> # src: the addresss of original file you want download, localDest: name of download file you wanna give
 ```
+For example, if you ran small test data with ```PR0 == 1``` and ```N == 40```, then you should see following results:
+
+> a     1.5
+
+> b     0.8333
+
+> c     0.8333
+
+> d     0.8333
+
 
 ## Improvement
 

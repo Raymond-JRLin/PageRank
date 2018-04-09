@@ -179,22 +179,28 @@ Use following order to check results:
 ```
 hdfs dfs -cat /pagerank1/* # this is for test of args3=1
 ```
-Then you can use big data to test.
+
+For example, if you ran small test data with ```PR0 == 1``` and ```N == 1```, then you should see following results:
+
+> a      1.5
+
+> b      0.8333
+
+> c      0.8333
+
+> d      0.8333
+
+Then you can use iteration of 30 - 40 times to see convergent result and big data to test.
 
 ### 8. Download results if you want
 ```
 hdfs dfs -get <src> <localDest> # src: the addresss of original file you want download, localDest: name of download file you wanna give
 ```
-For example, if you ran small test data with ```PR0 == 1``` and ```N == 40```, then you should see following results:
 
-> a     1.5
-
-> b     0.8333
-
-> c     0.8333
-
-> d     0.8333
-
+For example, if you ran small test data with ```N == 30```, and name your local file as ```pr30.txt```, then you can run like:
+```
+hdfs dfs -get /pagerank30/part-r-00000 pr30.txt
+```
 
 ## Improvement
 
